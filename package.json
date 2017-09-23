@@ -27,6 +27,7 @@
     "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
     "ryans-react-repository": "^0.1.0",
+    "ryans-redux-store": "^0.1.0",
     "sass-loader": "^6.0.6",
     "webpack": "^3.6.0"
   }

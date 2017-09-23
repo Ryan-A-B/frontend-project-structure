@@ -1,5 +1,6 @@
-import Store from "./library/Store.js";
-window.store = new Store(Actions.mapStorageToState, Actions.mapStateToStorage);
+import Store from "ryans-redux-store";
+import reducer from "./reducer.js";
+window.store = new Store(reducer, Actions.mapStorageToState, Actions.mapStateToStorage);
 
 require("bootstrap");
 
