@@ -1,6 +1,8 @@
 import Store from "./library/Store.js";
 window.store = new Store(Actions.mapStorageToState, Actions.mapStateToStorage);
 
+require("bootstrap");
+
 import Frame from "./Frame/Index.jsx";
 import Index from "./Index/Index.jsx";
 

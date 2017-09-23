@@ -1,5 +1,5 @@
-function Frame ({...attributes}) {
-    return <div {...attributes}/>;
+function Frame ({children}) {
+    return <div>{children}</div>;
 }
 
 export default Frame;

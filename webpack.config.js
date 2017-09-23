@@ -19,12 +19,15 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({
             "$": "jquery",
+            "jQuery": "jquery",
+            "Popper": "popper.js",
             "React": "react",
             "ReactDOM": "react-dom",
             "ReactRedux": "react-redux",
             "ReactRouter": "react-router",
             "ReactRouterRedux": "react-router-redux",
             "Redux": "redux",
+            "RRR": "ryans-react-repository",
             "moment": "moment",
 
             "Actions": path.resolve(SRC_DIR, 'actions.js')
