@@ -1,0 +1,8 @@
+*.swp
+
+node_modules
+src/js/library
+
+public/assets/css/style.css
+public/assets/js/script.js
+public/assets/js/script.js.map
