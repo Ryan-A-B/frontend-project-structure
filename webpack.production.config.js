@@ -5,7 +5,7 @@ var OUT_DIR = path.resolve(__dirname, "public/assets/js");
 var SRC_DIR = path.resolve(__dirname, "src");
 
 module.exports = {
-    devtool: "eval-source-map",
+    devtool: "source-map",
     entry: path.resolve(SRC_DIR, 'index.js'),
     output: {filename: 'script.js', path: OUT_DIR},
     module: {
@@ -31,6 +31,8 @@ module.exports = {
             "numeral": "numeral",
 
             "Actions": path.resolve(SRC_DIR, 'actions.js')
-        })
+        }),
+        new webpack.DefinePlugin({"process.env": {"NODE_ENV": JSON.stringify("production")}}),
+        new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}})
     ]
 };
