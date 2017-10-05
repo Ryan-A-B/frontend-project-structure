@@ -3,6 +3,6 @@
 node_modules
 src/js/library
 
-public/assets/css/style.css
-public/assets/js/script.js
-public/assets/js/script.js.map
+public/style.css
+public/script.js
+public/script.js.map

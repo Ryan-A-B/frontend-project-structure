@@ -1,7 +1,9 @@
-const  webpack = require("webpack");
+const webpack = require("webpack");
 const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const autoprefixer = require("autoprefixer");
 
-var OUT_DIR = path.resolve(__dirname, "public/assets/js");
+var OUT_DIR = path.resolve(__dirname, "public");
 var SRC_DIR = path.resolve(__dirname, "src");
 
 module.exports = {
@@ -11,7 +13,10 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.jsx?$/, include: SRC_DIR, loader: "babel-loader"},
-            {test: /\.scss$/, loader: "style-loader!css-loader!sass-loader"}
+            {test: /\.scss$/, loader: ExtractTextPlugin.extract({
+                fallback: "style-loader",
+                use: "css-loader!sass-loader!postcss-loader"
+            })}
         ]
     },
     plugins: [
@@ -31,6 +36,7 @@ module.exports = {
             "numeral": "numeral",
 
             "Actions": path.resolve(SRC_DIR, 'actions.js')
-        })
+        }),
+        new ExtractTextPlugin("style.css")
     ]
 };
